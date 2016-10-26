@@ -1,0 +1,28 @@
+title: PWAs – Service Workers and Server-free Selfies
+output: public/index.html
+style: styles.css
+script: script.js
+controls: false
+
+
+--
+
+# Progressive Web Apps
+
+## Service Workers and Server-free Selfies
+
+<div class="contact">
+  <p>Peter O'Shaughnessy, Samsung Internet</p>
+  <p>[@poshaughnessy](https://twitter.com/poshaughnessy)</p>
+</div>
+
+
+--
+
+# Thanks!
+
+<div class="contact">
+  <p>[@poshaughnessy](https://twitter.com/poshaughnessy)</p>
+  <p>[@sbrowserdevrel](https://twitter.com/sbrowserdevrel)</p>
+  <p>[medium.com/samsung-internet-dev](https://medium.com/samsung-internet-dev)</p>
+</div>
