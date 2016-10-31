@@ -19,6 +19,10 @@ controls: false
 
 --
 
+![Snapchat](images/snapchat-clones.png)
+
+--
+
 # Thanks!
 
 <div class="contact">
