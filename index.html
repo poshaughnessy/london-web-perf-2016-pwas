@@ -365,40 +365,40 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-family: 'Lora';
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/Source_Code_Pro/Lora-Regular.ttf') format('truetype'),
-  url('fonts/Source_Code_Pro/Lora-Regular.ttf') format('truetype');
+  src: url('fonts/Lora/Lora-Regular.ttf') format('truetype'),
+  url('fonts/Lora/Lora-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Lora';
   font-style: normal;
   font-weight: 500;
-  src: url('fonts/Source_Code_Pro/Lora-Medium.ttf') format('truetype'),
-  url('fonts/Source_Code_Pro/Lora-Medium.ttf') format('truetype');
+  src: url('fonts/Lora/Lora-Medium.ttf') format('truetype'),
+  url('fonts/Lora/Lora-Medium.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Lora';
   font-style: normal;
   font-weight: 600;
-  src: url('fonts/Source_Code_Pro/Lora-Semibold.ttf') format('truetype'),
-  url('fonts/Source_Code_Pro/Lora-Semibold.ttf') format('truetype');
+  src: url('fonts/Lora/Lora-Semibold.ttf') format('truetype'),
+  url('fonts/Lora/Lora-Semibold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Lora';
   font-style: normal;
   font-weight: 700;
-  src: url('fonts/Source_Code_Pro/Lora-Bold.ttf') format('truetype'),
-  url('fonts/Source_Code_Pro/Lora-Bold.ttf') format('truetype');
+  src: url('fonts/Lora/Lora-Bold.ttf') format('truetype'),
+  url('fonts/Lora/Lora-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Lora';
   font-style: normal;
   font-weight: 900;
-  src: url('fonts/Source_Code_Pro/Lora-Black.ttf') format('truetype'),
-  url('fonts/Source_Code_Pro/Lora-Black.ttf') format('truetype');
+  src: url('fonts/Lora/Lora-Black.ttf') format('truetype'),
+  url('fonts/Lora/Lora-Black.ttf') format('truetype');
 }
 
 /* Theme Styles */
@@ -558,7 +558,8 @@ h4 {
   font-weight: normal;
 }
 
-ul {
+ul,
+ol {
   margin: 0.5 0 1em 0;
   padding: 0 0 0 45px;
   line-height: 1.4;
@@ -618,6 +619,9 @@ pre {
   font-size: 75%;
   line-height: 1.3;
   text-align: left;
+  padding: 1em;
+  margin-bottom: 3em;
+  background: #fafafa;
 }
 
 table td,
@@ -877,6 +881,16 @@ pre .xml .cdata {
   margin-top: 3em;
 }
 
+.corner-logos {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.corner-logos img {
+  max-width: 100px;
+}
+
   </style>
 </head>
 <body>
@@ -911,7 +925,10 @@ pre .xml .cdata {
 <p class="caption">Snapchat by Snap Inc.</p></section>
   </div>
   <div class="slide hidden" id="slide-6">
-    <section class="slide-content"><blockquote><p>PWAs combine the best of web &amp; the best of native</p></blockquote></section>
+    <section class="slide-content"><blockquote>
+<p>PWAs combine the best of web &amp; the best of native</p>
+</blockquote>
+</section>
   </div>
   <div class="slide hidden" id="slide-7">
     <section class="slide-content"><h2 id="best-of-web">Best of web</h2>
@@ -934,24 +951,182 @@ pre .xml .cdata {
 </section>
   </div>
   <div class="slide hidden" id="slide-9">
-    <section class="slide-content"><h1 id="lessons-learned">Lessons learned</h1>
+    <section class="slide-content"><blockquote>
+<p>&ldquo;PWAs are all about removing friction&rdquo;</p>
+</blockquote>
 </section>
   </div>
   <div class="slide hidden" id="slide-10">
-    <section class="slide-content"><h2 id="1-caching-on-install">1. Caching on install</h2>
+    <section class="slide-content"><h1 id="10-things-i-learned">10 things I learned</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h2 id="1-generate-resources-list-with-globs">1. Generate resources list with globs</h2>
+<pre><code class="lang-javascript">gulp.task(<span class="hljs-string">'generate-service-worker'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">callback</span>) </span>{
+
+  swPrecache.write(path.join(rootDir, <span class="hljs-string">'service-worker.js'</span>), {
+    staticFileGlobs: [rootDir + <span class="hljs-string">'/**/*.{js,html,css,svg}'</span>],
+    stripPrefix: rootDir
+  }, callback);
+
+});</code></pre>
+<p><a href="https://github.com/GoogleChrome/sw-precache">github.com/GoogleChrome/sw-precache</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><pre><code class="lang-javascript"><span class="hljs-comment">// sw.js</span>
+<span class="hljs-keyword">import</span> resources <span class="hljs-keyword">from</span> <span class="hljs-string">'\0initial-resources'</span>;
+...
+cache.addAll( resources );</code></pre>
+<p><a href="gitlab.com/Rich-Harris/rollup-cache-manifest-example">gitlab.com/Rich-Harris/rollup-cache-manifest-example</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><h2 id="2-but-don-t-cache-too-much-on-install-">2. But don&#39;t cache too much on install!</h2>
+<p><img src="images/svgs.png" alt="Emoji SVGs"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><p><img src="images/emojis.png" alt="I switched SVGs for emojis as text"></p>
+<p class="caption">Emoji One SVGs (left), Unicode emojis (right)</p></section>
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h2 id="3-urls-not-files">3. URLs, not files</h2>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> RESOURCES = [
   <span class="hljs-string">'/'</span>,
-  <span class="hljs-string">'/css/styles.css'</span>,
-  <span class="hljs-string">'/build/bundle.js'</span>,
-  <span class="hljs-string">'/images/emojione/1f354.svg'</span>,
-  <span class="hljs-string">'/images/emojione/1f369.svg'</span>,
+  <span class="hljs-string">'/index.html'</span>,
   ...
 ];
 ...
 cache.addAll( RESOURCES );</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-11">
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><h2 id="4-remember-to-check-lighthouse">4. Remember to check Lighthouse</h2>
+<p><img src="images/lighthouse-report.png" alt="Lighthouse"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-17">
+    <section class="slide-content"><h2 id="5-getusermedia-does-not-observe-requested-constraints">5. getUserMedia does not observe requested constraints</h2>
+<pre><code class="lang-javascript">
+</code></pre>
+<div class="corner-logos"><img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
+  </div>
+  <div class="slide hidden" id="slide-18">
+    <section class="slide-content"><h2 id="6-getusermedia-prompt-doesn-t-appear-in-localhost-standalone">6. getUserMedia prompt doesn&#39;t appear in localhost standalone</h2>
+<div class="corner-logos"><img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
+  </div>
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><h2 id="7-data-uri-downloads-may-be-blocked">7. Data-uri downloads may be blocked</h2>
+<p><img src="images/image-save-error.png" alt="Data URI image save error" width="30%"></p>
+<div class="corner-logos"><img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
+  </div>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h2 id="8-sws-miss-lt-a-download-gt-requests">8. SWs miss &lt;a download&gt; requests</h2>
+<p><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=468227#c13"><img src="images/chromium-bug.png" alt="Chromium bug"></a></p>
+<div class="corner-logos"><img src="images/chrome.png" alt="Chrome"> <img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h2 id="9-new-tab-in-standalone-mode-kills-page">9. &#39;New tab&#39; in standalone mode kills page</h2>
+<!-- TODO if there's time, make a test case and quick video of this -->
+
+<pre><code class="lang-javascript"><span class="hljs-built_in">window</span>.open(saveCanvas.toDataURL(<span class="hljs-string">'image/png'</span>), <span class="hljs-string">'_blank'</span>);</code></pre>
+<div class="corner-logos"><img src="images/chrome.png" alt="Chrome"> <img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
+  </div>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><h2 id="10-long-tap-disabled-in-standalone-mode">10. Long tap disabled in standalone mode</h2>
+<!-- TODO show a video? -->
+
+<div class="corner-logos"><img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
+  </div>
+  <div class="slide hidden" id="slide-23">
+    <section class="slide-content"><h2 id="do-we-need-a-save-image-feature-">Do we need a &#39;save image&#39; feature?</h2>
+<p><a href="https://discourse.wicg.io/t/save-image-feature-on-mobile-platforms/1676">bit.ly/save-image-feature</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><h2 id="other-tricky-things">Other tricky things</h2>
+<ul>
+<li>&lt;input type=”file”&gt; photo orientation (used <a href="https://github.com/blueimp/JavaScript-Load-Image.git">JavaScript-Load-Image</a>)</li>
+<li>Calculating text bounds on canvas (I assume emojis are square)</li>
+<li>Text doesn&#39;t render to canvas when over about 240px? :-/</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-25">
+    <section class="slide-content"><h1 id="rendering">Rendering</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-26">
+    <section class="slide-content"><h2 id="google-recommend-in-order-">Google recommend (in order)</h2>
+<ol>
+<li>SSR app shell &amp; content for entry page. CSR takes over.</li>
+<li>SSR only app shell. JS fetches content once loaded.</li>
+<li>SSR full page.</li>
+<li>CSR full page.</li>
+</ol>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-27">
+    <section class="slide-content"><h1 id="caching-strategies">Caching strategies</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-28">
+    <section class="slide-content"><ul>
+<li>“cache first”, then fallback to network</li>
+</ul>
+<pre><code class="lang-javascript">toolbox.router.get(‘/images’, toolbox.cacheFirst);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-29">
+    <section class="slide-content"><ul>
+<li>“network first”, then fallback to cache</li>
+</ul>
+<pre><code class="lang-javascript">toolbox.router.get(‘/api’, toolbox.networkFirst);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-30">
+    <section class="slide-content"><ul>
+<li>“fastest” — serve whichever comes back first</li>
+</ul>
+<pre><code class="lang-javascript">toolbox.router.get(‘/profile’, toolbox.fastest);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-31">
+    <section class="slide-content"><ul>
+<li>“network only”</li>
+<li>“cache only”</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-32">
+    <section class="slide-content"><h1 id="what-s-next-">What&#39;s next?</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-33">
+    <section class="slide-content"><h2 id="push-notifications">Push notifications</h2>
+<div class="corner-logos"><img src="images/chrome.png" alt="Chrome"> <img src="images/sbrowser5.0.png" alt="Samsung Internet"> <img src="images/firefox.png" alt="Firefox"> <img src="images/opera.png" alt="Opera"></div></section>
+  </div>
+  <div class="slide hidden" id="slide-34">
+    <section class="slide-content"><h2 id="background-sync">Background sync</h2>
+<pre><code class="lang-javascript">navigator.serviceWorker.ready.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">reg</span>) </span>{
+    <span class="hljs-keyword">return</span> reg.sync.register(<span class="hljs-string">'syncTest'</span>);
+  }).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    log(<span class="hljs-string">'Sync registered'</span>);
+  });</code></pre>
+<div class="corner-logos"><img src="images/chrome.png" alt="Chrome"></div></section>
+  </div>
+  <div class="slide hidden" id="slide-35">
+    <section class="slide-content"><!-- ## Save-Data header -->
+
+<!-- Not really sure how this would work for Snapwat TBH, but thought worth sharing -->
+
+<!-- <div class="corner-logos">![Chrome](images/chrome.png) ![Opera](images/opera.png)</div> -->
+
+<h2 id="web-share-api">Web Share API</h2>
+<div class="corner-logos"><img src="images/chrome.png" alt="Chrome"></div></section>
+  </div>
+  <div class="slide hidden" id="slide-36">
     <section class="slide-content"><h1 id="thanks-">Thanks!</h1>
 <div class="contact">
   <p><a href="https://twitter.com/poshaughnessy">@poshaughnessy</a></p>
