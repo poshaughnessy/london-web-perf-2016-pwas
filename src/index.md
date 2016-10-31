@@ -53,13 +53,31 @@ controls: false
 
 ## Best of native
 
-* Offline
 * Add to Home Screen
+* Offline
+* Instant load
 * Push notifications
 
 --
 
-## Lesson 1: What To Cache On Install
+# Lessons learned
+
+--
+
+## 1. Caching on install
+
+```javascript
+const RESOURCES = [
+  '/',
+  '/css/styles.css',
+  '/build/bundle.js',
+  '/images/emojione/1f354.svg',
+  '/images/emojione/1f369.svg',
+  ...
+];
+...
+cache.addAll( RESOURCES );
+```
 
 --
 

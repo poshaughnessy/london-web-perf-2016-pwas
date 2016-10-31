@@ -329,8 +329,6 @@ code {
 
 pre {
   display: inline-block;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 2em;
   border-radius: 1em;
 }
 
@@ -353,7 +351,7 @@ pre .lisp .title,
 pre .clojure .built_in,
 pre .nginx .title,
 pre .tex .special {
-  color: #f92672;
+  color: #704dff;
 }
 
 pre code .constant {
@@ -397,7 +395,7 @@ pre .apache .tag,
 pre .apache .cbracket,
 pre .tex .command,
 pre .prompt {
-  color: #a6e22e;
+  color: #987fff;
 }
 
 pre .comment,
@@ -410,7 +408,7 @@ pre .deletion,
 pre .shebang,
 pre .apache .sqbracket,
 pre .tex .formula {
-  color: #75715e;
+  color: #aaa;
 }
 
 pre .keyword,
@@ -445,12 +443,16 @@ pre .xml .cdata {
 }
 
 .hljs-keyword {
-  color: #12ab2b;
+  color: #704dff;
 }
 
 .hljs-tag,
 .hljs-name {
   color: #90f7f8;
+}
+
+.hljs-string {
+  color: #987fff;
 }
 
 /* Media Queries */
