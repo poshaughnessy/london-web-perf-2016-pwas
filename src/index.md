@@ -239,13 +239,33 @@ toolbox.router.get(‘/profile’, toolbox.fastest);
 
 --
 
-# What's next?
+## Save-Data header
+
+<div class="corner-logos">![Chrome](images/chrome.png) ![Opera](images/opera.png)</div>
+
+--
+
+# Next for Snapwat?
+
+--
+
+## Face tracking
 
 --
 
 ## Push notifications
 
 <div class="corner-logos">![Chrome](images/chrome.png) ![Samsung Internet](images/sbrowser5.0.png) ![Firefox](images/firefox.png) ![Opera](images/opera.png)</div>
+
+--
+
+## Web Share API
+
+<div class="corner-logos">![Chrome](images/chrome.png)</div>
+
+--
+
+# Next for PWAs?
 
 --
 
@@ -263,15 +283,9 @@ navigator.serviceWorker.ready.then(function(reg) {
 
 --
 
-<!-- ## Save-Data header -->
+## Multiple service workers for parallelisation?
 
-<!-- Not really sure how this would work for Snapwat TBH, but thought worth sharing -->
-
-<!-- <div class="corner-logos">![Chrome](images/chrome.png) ![Opera](images/opera.png)</div> -->
-
-## Web Share API
-
-<div class="corner-logos">![Chrome](images/chrome.png)</div>
+[jakearchibald.com/2016/service-worker-meeting-notes/](https://jakearchibald.com/2016/service-worker-meeting-notes/)
 
 --
 
