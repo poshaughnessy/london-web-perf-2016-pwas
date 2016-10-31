@@ -9,13 +9,13 @@ controls: false
 
 # Progressive Web Apps
 
-## Service Workers and Server-free Selfies
+## Service Workers & Server-free Selfies
 
 <div class="contact">
-  <p>Peter O'Shaughnessy, Samsung Internet</p>
+  <p>Peter O'Shaughnessy</p>
   <p>[@poshaughnessy](https://twitter.com/poshaughnessy)</p>
+  <p>[@samsunginternet](https://twitter.com/samsunginternet)</p>
 </div>
-
 
 --
 
@@ -23,6 +23,6 @@ controls: false
 
 <div class="contact">
   <p>[@poshaughnessy](https://twitter.com/poshaughnessy)</p>
-  <p>[@sbrowserdevrel](https://twitter.com/sbrowserdevrel)</p>
+  <p>[@samsunginternet](https://twitter.com/samsunginternet)</p>
   <p>[medium.com/samsung-internet-dev](https://medium.com/samsung-internet-dev)</p>
 </div>
