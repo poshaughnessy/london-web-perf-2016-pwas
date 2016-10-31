@@ -19,6 +19,18 @@ controls: false
 
 --
 
+![Samsung Internet](images/samsunginternet-devrel.jpg)
+
+--
+
+![Snapwat](images/snapwat.png)
+
+--
+
+![Snapwat](images/snapwat-ldnwebperf.png)
+
+--
+
 ![Snapchat](images/snapchat-clones.png)
 
 --
