@@ -31,7 +31,35 @@ controls: false
 
 --
 
-![Snapchat](images/snapchat-clones.png)
+## Not to be confused with...
+
+<img src="images/snapchat.svg" alt="Snapchat" width="30%"/>
+<p class="caption">Snapchat by Snap Inc.</p>
+
+--
+
+<blockquote><p>PWAs combine the best of web & the best of native</p></blockquote>
+
+--
+
+## Best of web
+
+* Multi-platform
+* Frictionless
+* Discoverable
+* Accessible
+
+--
+
+## Best of native
+
+* Offline
+* Add to Home Screen
+* Push notifications
+
+--
+
+## Lesson 1: What To Cache On Install
 
 --
 
