@@ -1143,65 +1143,27 @@ link.click();</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-36">
-    <section class="slide-content"><h1 id="next-for-pwas-">Next for PWAs? 🆕</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-37">
-    <section class="slide-content"><h2 id="service-worker-v2-cache-api-v2-">Service worker &quot;v2&quot; &amp; cache API &quot;v2&quot;? 🔜</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-38">
-    <section class="slide-content"><h2 id="background-sync-">Background sync ⛰</h2>
-<pre><code class="lang-javascript">navigator.serviceWorker.ready.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">reg</span>) </span>{
-    <span class="hljs-keyword">return</span> reg.sync.register(<span class="hljs-string">'syncTest'</span>);
-  }).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    log(<span class="hljs-string">'Sync registered'</span>);
-  });</code></pre>
-<div class="corner-logos"><img src="images/chrome.png" alt="Chrome"></div></section>
-  </div>
-  <div class="slide hidden" id="slide-39">
-    <section class="slide-content"><h2 id="foreign-fetch-">Foreign fetch ✈️</h2>
-<pre><code>Link: &lt;/service-worker.js&gt;; rel=&quot;serviceworker&quot;
-Origin-Trial: token_obtained_from_signup</code></pre>
-<p><a href="http://bit.ly/foreign-fetch">bit.ly/foreign-fetch</a></p>
-<div class="corner-logos"><img src="images/chrome.png" alt="Chrome"></div></section>
-  </div>
-  <div class="slide hidden" id="slide-40">
-    <section class="slide-content"><h2 id="multiple-service-workers-for-parallelisation-">Multiple service workers for parallelisation? 👯</h2>
-<p><img src="images/multiple-service-workers.png" alt="Github issue" width="70%"/></p>
-<p><a href="https://jakearchibald.com/2016/service-worker-meeting-notes/">jakearchibald.com/2016/service-worker-meeting-notes/</a></p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-41">
-    <section class="slide-content"><h2 id="save-data-header-">Save-Data header 🗜</h2>
-<pre><code class="lang-javascript">self.addEventListener(<span class="hljs-string">'fetch'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
-  <span class="hljs-keyword">if</span> (event.request.headers.get(<span class="hljs-string">'save-data'</span>)) {
-    ...</code></pre>
-<p><a href="http://bit.ly/save-data-header">bit.ly/save-data-header</a></p>
-<div class="corner-logos"><img src="images/chrome.png" alt="Chrome"> <img src="images/opera.png" alt="Opera"></div></section>
-  </div>
-  <div class="slide hidden" id="slide-42">
     <section class="slide-content"><h1 id="next-for-snapwat-">Next for Snapwat? ⏩</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-43">
+  <div class="slide hidden" id="slide-37">
     <section class="slide-content"><h2 id="push-notifications-">Push notifications 🙌</h2>
 <p><img src="images/podle-push-notification.png" alt="Podle push notification" width="25%"/></p>
 <!-- [bit.ly/web-fundamentals-push-notifications](http://bit.ly/web-fundamentals-push-notifications) -->
 
 <div class="corner-logos"><img src="images/chrome.png" alt="Chrome"> <img src="images/sbrowser5.0.png" alt="Samsung Internet"> <img src="images/firefox.png" alt="Firefox"> <img src="images/opera.png" alt="Opera"></div></section>
   </div>
-  <div class="slide hidden" id="slide-44">
+  <div class="slide hidden" id="slide-38">
     <section class="slide-content"><h2 id="web-share-api-">Web Share API 🗯</h2>
 <p><img src="images/web-share-api.png" alt="Share options" width="25%"/></p>
 <div class="corner-logos"><img src="images/chrome.png" alt="Chrome"></div></section>
   </div>
-  <div class="slide hidden" id="slide-45">
+  <div class="slide hidden" id="slide-39">
     <section class="slide-content"><h2 id="head-tracking-">Head tracking 👀</h2>
 <p><img src="images/head-tracking.png" alt="Head tracking example" width="25%"/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-46">
+  <div class="slide hidden" id="slide-40">
     <section class="slide-content"><ul>
 <li>Brushes 🖌</li>
 <li>Undo/Redo ↩️↪️</li>
@@ -1210,8 +1172,46 @@ Origin-Trial: token_obtained_from_signup</code></pre>
 </ul>
 </section>
   </div>
+  <div class="slide hidden" id="slide-41">
+    <section class="slide-content"><h1 id="next-for-pwas-">Next for PWAs? 🆕</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-42">
+    <section class="slide-content"><h2 id="service-worker-cache-api-improvements-">Service worker &amp; cache API improvements 🔜</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-43">
+    <section class="slide-content"><h2 id="background-sync-">Background sync ⛰</h2>
+<pre><code class="lang-javascript">navigator.serviceWorker.ready.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">reg</span>) </span>{
+    <span class="hljs-keyword">return</span> reg.sync.register(<span class="hljs-string">'syncTest'</span>);
+  }).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    log(<span class="hljs-string">'Sync registered'</span>);
+  });</code></pre>
+<div class="corner-logos"><img src="images/chrome.png" alt="Chrome"></div></section>
+  </div>
+  <div class="slide hidden" id="slide-44">
+    <section class="slide-content"><h2 id="foreign-fetch-">Foreign fetch ✈️</h2>
+<pre><code>Link: &lt;/service-worker.js&gt;; rel=&quot;serviceworker&quot;
+Origin-Trial: token_obtained_from_signup</code></pre>
+<p><a href="http://bit.ly/foreign-fetch">bit.ly/foreign-fetch</a></p>
+<div class="corner-logos"><img src="images/chrome.png" alt="Chrome"></div></section>
+  </div>
+  <div class="slide hidden" id="slide-45">
+    <section class="slide-content"><h2 id="multiple-service-workers-for-parallelisation-">Multiple service workers for parallelisation? 👯</h2>
+<p><img src="images/multiple-service-workers.png" alt="Github issue" width="70%"/></p>
+<p><a href="https://jakearchibald.com/2016/service-worker-meeting-notes/">jakearchibald.com/2016/service-worker-meeting-notes/</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-46">
+    <section class="slide-content"><h2 id="save-data-header-">Save-Data header 🗜</h2>
+<pre><code class="lang-javascript">self.addEventListener(<span class="hljs-string">'fetch'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+  <span class="hljs-keyword">if</span> (event.request.headers.get(<span class="hljs-string">'save-data'</span>)) {
+    ...</code></pre>
+<p><a href="http://bit.ly/save-data-header">bit.ly/save-data-header</a></p>
+<div class="corner-logos"><img src="images/chrome.png" alt="Chrome"> <img src="images/opera.png" alt="Opera"></div></section>
+  </div>
   <div class="slide hidden" id="slide-47">
-    <section class="slide-content"><h1 id="-snapw-at-https-snapw-at-">🔗 <a href="https://snapw.at">snapw.at</a></h1>
+    <section class="slide-content"><h2 id="-snapw-at-https-snapw-at-">🔗 <a href="https://snapw.at">snapw.at</a></h2>
 <h2 id="-github-com-samsunginternet-snapwat-https-github-com-samsunginternet-snapwat-">📃  <a href="https://github.com/SamsungInternet/snapwat">github.com/SamsungInternet/snapwat</a></h2>
 </section>
   </div>
