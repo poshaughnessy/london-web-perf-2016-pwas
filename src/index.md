@@ -290,6 +290,8 @@ Origin-Trial: token_obtained_from_signup
 
 [bit.ly/foreign-fetch](http://bit.ly/foreign-fetch)
 
+<div class="corner-logos">![Chrome](images/chrome.png)</div>
+
 --
 
 ## Multiple service workers for parallelisation? 👯
