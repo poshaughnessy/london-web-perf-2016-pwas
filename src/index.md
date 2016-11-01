@@ -72,7 +72,7 @@ controls: false
 
 --
 
-## 1⃣️ Automate precache resource list 📝 
+## 1⃣️ Automate precache resource list 📝
 
 ```javascript
 gulp.task('generate-service-worker', function(callback) {
@@ -229,7 +229,7 @@ window.open(canvas.toDataURL('image/png'), '_blank');
 
 --
 
-## 4️⃣️ No long tap menu in standalone mode 🚫
+## 4⃣ No long tap menu in standalone mode 🚫
 
 <img src="images/no-long-tap.png" alt="No long tap menu" width="25%"/>
 
@@ -237,7 +237,7 @@ window.open(canvas.toDataURL('image/png'), '_blank');
 
 --
 
-## 5️⃣️ Save image disabled if image too big 🐘
+## 5⃣ Save image disabled if image too big 🐘
 
 <img src="images/save-image-disabled.png" alt="Save image disabled" width="50%"/>
 
@@ -263,7 +263,7 @@ window.open(canvas.toDataURL('image/png'), '_blank');
 
 --
 
-## Service worker "v2" & cache API "v2"? 🔜 
+## Service worker "v2" & cache API "v2"? 🔜
 
 --
 
