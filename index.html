@@ -961,7 +961,7 @@ pre .xml .cdata {
 </section>
   </div>
   <div class="slide hidden" id="slide-11">
-    <section class="slide-content"><h2 id="1-don-t-define-precache-list-by-hand-">1⃣️. Don&#39;t define precache list by hand ✍</h2>
+    <section class="slide-content"><h2 id="1-don-t-define-precache-list-by-hand-">1⃣️ Don&#39;t define precache list by hand ✍</h2>
 <pre><code class="lang-javascript">gulp.task(<span class="hljs-string">'generate-service-worker'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">callback</span>) </span>{
 
   swPrecache.write(path.join(rootDir, <span class="hljs-string">'service-worker.js'</span>), {
@@ -982,7 +982,7 @@ cache.addAll( resources );</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-13">
-    <section class="slide-content"><h2 id="2-don-t-cache-too-much-on-install-">2⃣️. Don&#39;t cache too much on install! ⚖</h2>
+    <section class="slide-content"><h2 id="2-don-t-cache-too-much-on-install-">2⃣️ Don&#39;t cache too much on install! ⚖</h2>
 <p><img src="images/svgs.png" alt="Emoji SVGs"></p>
 </section>
   </div>
@@ -991,7 +991,7 @@ cache.addAll( resources );</code></pre>
 <p class="caption">Emoji One SVGs (left), Unicode emojis (right)</p></section>
   </div>
   <div class="slide hidden" id="slide-15">
-    <section class="slide-content"><h2 id="3-urls-not-files-">3⃣️. URLs, not files 🗂</h2>
+    <section class="slide-content"><h2 id="3-urls-not-files-">3⃣️ URLs, not files 🗂</h2>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> RESOURCES = [
   <span class="hljs-string">'/'</span>,
   <span class="hljs-string">'/index.html'</span>,
@@ -1002,39 +1002,39 @@ cache.addAll( RESOURCES );</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-16">
-    <section class="slide-content"><h2 id="4-remember-to-check-lighthouse-">4⃣️. Remember to check Lighthouse 🔦🏠</h2>
+    <section class="slide-content"><h2 id="4-remember-to-check-lighthouse-">4⃣️ Remember to check Lighthouse 🔦🏠</h2>
 <p><img src="images/lighthouse-report.png" alt="Lighthouse"></p>
 </section>
   </div>
   <div class="slide hidden" id="slide-17">
-    <section class="slide-content"><h2 id="5-getusermedia-does-not-observe-requested-constraints-">5⃣️. getUserMedia does not observe requested constraints 🙈</h2>
+    <section class="slide-content"><h2 id="5-getusermedia-does-not-observe-requested-constraints-">5⃣️ getUserMedia does not observe requested constraints 🙈</h2>
 <pre><code class="lang-javascript">
 </code></pre>
 <div class="corner-logos"><img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
   </div>
   <div class="slide hidden" id="slide-18">
-    <section class="slide-content"><h2 id="6-getusermedia-prompt-doesn-t-appear-in-localhost-standalone-">6⃣️. getUserMedia prompt doesn&#39;t appear in localhost standalone 🙊</h2>
+    <section class="slide-content"><h2 id="6-getusermedia-prompt-doesn-t-appear-in-localhost-standalone-">6⃣️ getUserMedia prompt doesn&#39;t appear in localhost standalone 🙊</h2>
 <div class="corner-logos"><img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
   </div>
   <div class="slide hidden" id="slide-19">
-    <section class="slide-content"><h2 id="7-data-uri-downloads-may-be-blocked-">7⃣️. Data-uri downloads may be blocked ⛔️</h2>
+    <section class="slide-content"><h2 id="7-data-uri-downloads-may-be-blocked-">7⃣️ Data-uri downloads may be blocked ⛔️</h2>
 <p><img src="images/image-save-error.png" alt="Data URI image save error" width="30%"></p>
 <div class="corner-logos"><img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
   </div>
   <div class="slide hidden" id="slide-20">
-    <section class="slide-content"><h2 id="8-sws-miss-lt-a-download-gt-requests-">8⃣️. SWs miss &lt;a download&gt; requests 🙉</h2>
+    <section class="slide-content"><h2 id="8-sws-miss-lt-a-download-gt-requests-">8⃣️ SWs miss &lt;a download&gt; requests 🙉</h2>
 <p><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=468227#c13"><img src="images/chromium-bug.png" alt="Chromium bug"></a></p>
 <div class="corner-logos"><img src="images/chrome.png" alt="Chrome"> <img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
   </div>
   <div class="slide hidden" id="slide-21">
-    <section class="slide-content"><h2 id="9-new-tab-in-standalone-mode-kills-page-">9⃣️. &#39;New tab&#39; in standalone mode kills page 💀</h2>
+    <section class="slide-content"><h2 id="9-new-tab-in-standalone-mode-kills-page-">9⃣️ &#39;New tab&#39; in standalone mode kills page 💀</h2>
 <!-- TODO if there's time, make a test case and quick video of this -->
 
 <pre><code class="lang-javascript"><span class="hljs-built_in">window</span>.open(saveCanvas.toDataURL(<span class="hljs-string">'image/png'</span>), <span class="hljs-string">'_blank'</span>);</code></pre>
 <div class="corner-logos"><img src="images/chrome.png" alt="Chrome"> <img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
   </div>
   <div class="slide hidden" id="slide-22">
-    <section class="slide-content"><h2 id="-long-tap-disabled-in-standalone-mode-">🔟. Long tap disabled in standalone mode 🚫</h2>
+    <section class="slide-content"><h2 id="-long-tap-disabled-in-standalone-mode-">🔟 Long tap disabled in standalone mode 🚫</h2>
 <!-- TODO show a video? -->
 
 <div class="corner-logos"><img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
