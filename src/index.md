@@ -68,7 +68,7 @@ controls: false
 
 --
 
-# 🔟 things I learned
+# Service Workers
 
 --
 
@@ -102,7 +102,7 @@ cache.addAll( resources );
 
 ## 2⃣️ Don't cache too much on install! ⚖
 
-![Emoji SVGs](images/svgs.png)
+<img src="images/svgs.png" alt="Emoji SVGs" width="80%"/>
 
 --
 
@@ -127,98 +127,20 @@ cache.addAll( RESOURCES );
 
 ## 4⃣️ Remember to check Lighthouse 🔦🏠
 
-![Lighthouse](images/lighthouse-report.png)
+<img src="images/lighthouse-report.png" alt="Lighthouse" width="80%"/>
 
 --
 
-## 5⃣️ Don't rely on getUserMedia constraints 🙈
+## 5⃣ Rendering preferences (in order) 👇
 
-```javascript
-const constraints = {
-   width: {ideal: width, max: width},
-   height: {ideal: height, max: height}
-  };
-
-navigator.mediaDevices.getUserMedia({video: constraints})
-...
-```
-
-<div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
-
---
-
-## 6⃣️ Test standalone mode at non-localhost URL 🙊
-
-<img src="images/localhost-bug.png" alt="Localhost bug" width="25%"/>
-
-<div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
-
---
-
-## 7⃣️ Data-uri downloads currently blocked ⛔️
-
-<img src="images/image-save-error.png" alt="Data URI image save error" width="25%"/>
-
-<div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
-
---
-
-## 8⃣️ SWs miss &lt;a download&gt; requests 🙉
-
-<a href="https://bugs.chromium.org/p/chromium/issues/detail?id=468227#c13"><img src="images/chromium-bug.png" alt="Chromium bug" width="75%"/></a>
-
-<div class="corner-logos">![Chrome](images/chrome.png) ![Samsung Internet](images/sbrowser5.0.png)</div>
-
---
-
-## 9⃣️ 'New tab' in standalone mode kills page 💀
-
-<!-- TODO if there's time, make a test case and quick video of this -->
-
-```javascript
-window.open(canvas.toDataURL('image/png'), '_blank');
-```
-
-<div class="corner-logos">![Chrome](images/chrome.png) ![Samsung Internet](images/sbrowser5.0.png)</div>
-
---
-
-## 🔟 No long tap menu in standalone mode 🚫
-
-<img src="images/no-long-tap.png" alt="No long tap menu" width="25%"/>
-
-<div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
-
---
-
-## Do we need a 'save image' feature? 💾
-
-[bit.ly/save-image-feature](https://discourse.wicg.io/t/save-image-feature-on-mobile-platforms/1676)
-
---
-
-## Other tricky things 🤔
-
-* &lt;input type=”file”&gt; orientation (used [JavaScript-Load-Image](https://github.com/blueimp/JavaScript-Load-Image.git))
-* Calculating canvas text bounds
-* Text doesn't render when over ~240px?
-
---
-
-# Performance 🏃
-
---
-
-## Rendering recommendations (in order) 👇
-
-1. SSR app shell & content for entry page. CSR takes over.
-1. SSR only app shell. JS fetches content once loaded.
+1. SSR app shell & initial page. CSR takes over.
+1. SSR only app shell. JS fetches rest on load.
 1. SSR full page.
 1. CSR full page.
 
 --
 
-## Caching strategies 🏁
+## 6⃣ Easy caching strategies with sw-toolbox 🔧
 
 * “cache first”, then fallback to network
 
@@ -247,21 +169,101 @@ toolbox.router.get(‘/profile’, toolbox.fastest);
 
 --
 
-## Save-Data header 🗜
+# getUserMedia
+
+--
+
+## 1⃣️ Standalone & localhost: prompt doesn't appear 🙊
+
+<img src="images/localhost-bug.png" alt="Localhost bug" width="25%"/>
+
+<div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
+
+--
+
+## 2⃣️ Don't rely on getUserMedia constraints 🙈
 
 ```javascript
-self.addEventListener('fetch', function(event) {
-  if (event.request.headers.get('save-data')) {
-    ...  
+const constraints = {
+   width: {ideal: width, max: width},
+   height: {ideal: height, max: height}
+  };
+
+navigator.mediaDevices.getUserMedia({video: constraints})
+...
 ```
 
-[bit.ly/save-data-header](http://bit.ly/save-data-header)
+<div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
 
-<div class="corner-logos">![Chrome](images/chrome.png) ![Opera](images/opera.png)</div>
+--
+
+# Saving images
+
+--
+
+## 1⃣️ Data-uri downloads currently blocked ⛔️
+
+<img src="images/image-save-error.png" alt="Data URI image save error" width="25%"/>
+
+<div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
+
+--
+
+## 2⃣️ &lt;a download&gt; requests bypass SW 🙉
+
+<a href="https://bugs.chromium.org/p/chromium/issues/detail?id=468227#c13"><img src="images/chromium-bug.png" alt="Chromium bug" width="75%"/></a>
+
+<div class="corner-logos">![Chrome](images/chrome.png) ![Samsung Internet](images/sbrowser5.0.png)</div>
+
+--
+
+## 3⃣️ 'New tab' in standalone mode kills page 💀
+
+<!-- TODO if there's time, make a test case and quick video of this -->
+
+```javascript
+window.open(canvas.toDataURL('image/png'), '_blank');
+```
+
+<div class="corner-logos">![Chrome](images/chrome.png) ![Samsung Internet](images/sbrowser5.0.png)</div>
+
+--
+
+## 4️⃣️ No long tap menu in standalone mode 🚫
+
+<img src="images/no-long-tap.png" alt="No long tap menu" width="25%"/>
+
+<div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
+
+--
+
+## 5️⃣️ Save image disabled if image too big 🐘
+
+<img src="images/save-image-disabled.png" alt="Save image disabled" width="50%"/>
+
+<div class="corner-logos">![Chrome](images/chrome.png) ![Samsung Internet](images/sbrowser5.0.png)</div>
+
+--
+
+## Do we need a 'save image' feature? 💾
+
+[bit.ly/save-image-feature](https://discourse.wicg.io/t/save-image-feature-on-mobile-platforms/1676)
+
+--
+
+## Other tricky things 🤔
+
+* &lt;input type=”file”&gt; orientation (I used [JavaScript-Load-Image](https://github.com/blueimp/JavaScript-Load-Image.git))
+* Calculating canvas text bounds
+* Text doesn't render when over ~240px?
 
 --
 
 # Next for PWAs? 🆕
+
+--
+
+## Service worker "v2" & cache API "v2"? 🔜 
 
 --
 
@@ -292,14 +294,23 @@ Origin-Trial: token_obtained_from_signup
 
 ## Multiple service workers for parallelisation? 👯
 
+<img src="images/multiple-service-workers.png" alt="Github issue" width="70%"/>
+
 [jakearchibald.com/2016/service-worker-meeting-notes/](https://jakearchibald.com/2016/service-worker-meeting-notes/)
 
 --
 
-# 🔜
+## Save-Data header 🗜
 
-* Service worker "v2"
-* Cache API "v2"
+```javascript
+self.addEventListener('fetch', function(event) {
+  if (event.request.headers.get('save-data')) {
+    ...  
+```
+
+[bit.ly/save-data-header](http://bit.ly/save-data-header)
+
+<div class="corner-logos">![Chrome](images/chrome.png) ![Opera](images/opera.png)</div>
 
 --
 
@@ -318,6 +329,8 @@ Origin-Trial: token_obtained_from_signup
 --
 
 ## Web Share API 🗯
+
+<img src="images/web-share-api.png" alt="Share options" width="25%"/>
 
 <div class="corner-logos">![Chrome](images/chrome.png)</div>
 
