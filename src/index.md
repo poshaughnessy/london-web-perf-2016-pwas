@@ -157,7 +157,7 @@ navigator.mediaDevices.getUserMedia({video: constraints})
 
 ## 7⃣️ Data-uri downloads currently blocked ⛔️
 
-<img src="images/image-save-error.png" alt="Data URI image save error" width="30%">
+<img src="images/image-save-error.png" alt="Data URI image save error" width="25%">
 
 <div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
 
