@@ -35,7 +35,7 @@ controls: false
 
 --
 
-## Not to be confused with... 😕
+## Not to be confused with... 👻
 
 <img src="images/snapchat.svg" alt="Snapchat" width="30%"/>
 <p class="caption">Snapchat by Snap Inc.</p>
