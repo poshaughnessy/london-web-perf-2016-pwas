@@ -291,11 +291,46 @@ window.open(canvas.toDataURL('image/png'), '_blank');
 
 --
 
+# Next for Snapwat? ⏩
+
+--
+
+## Push notifications 🙌
+
+<img src="images/podle-push-notification.png" alt="Podle push notification" width="25%"/>
+
+<!-- [bit.ly/web-fundamentals-push-notifications](http://bit.ly/web-fundamentals-push-notifications) -->
+
+<div class="corner-logos">![Chrome](images/chrome.png) ![Samsung Internet](images/sbrowser5.0.png) ![Firefox](images/firefox.png) ![Opera](images/opera.png)</div>
+
+--
+
+## Web Share API 🗯
+
+<img src="images/web-share-api.png" alt="Share options" width="25%"/>
+
+<div class="corner-logos">![Chrome](images/chrome.png)</div>
+
+--
+
+## Head tracking 👀
+
+<img src="images/head-tracking.png" alt="Head tracking example" width="25%"/>
+
+--
+
+* Brushes 🖌
+* Undo/Redo ↩️↪️
+* Local storage? 📥
+* Any suggestions...? 😃
+
+--
+
 # Next for PWAs? 🆕
 
 --
 
-## Service worker "v2" & cache API "v2"? 🔜
+## Service worker & cache API improvements 🔜
 
 --
 
@@ -348,42 +383,7 @@ self.addEventListener('fetch', function(event) {
 
 --
 
-# Next for Snapwat? ⏩
-
---
-
-## Push notifications 🙌
-
-<img src="images/podle-push-notification.png" alt="Podle push notification" width="25%"/>
-
-<!-- [bit.ly/web-fundamentals-push-notifications](http://bit.ly/web-fundamentals-push-notifications) -->
-
-<div class="corner-logos">![Chrome](images/chrome.png) ![Samsung Internet](images/sbrowser5.0.png) ![Firefox](images/firefox.png) ![Opera](images/opera.png)</div>
-
---
-
-## Web Share API 🗯
-
-<img src="images/web-share-api.png" alt="Share options" width="25%"/>
-
-<div class="corner-logos">![Chrome](images/chrome.png)</div>
-
---
-
-## Head tracking 👀
-
-<img src="images/head-tracking.png" alt="Head tracking example" width="25%"/>
-
---
-
-* Brushes 🖌
-* Undo/Redo ↩️↪️
-* Local storage? 📥
-* Any suggestions...? 😃
-
---
-
-# 🔗 [snapw.at](https://snapw.at)
+## 🔗 [snapw.at](https://snapw.at)
 
 ## 📃  [github.com/SamsungInternet/snapwat](https://github.com/SamsungInternet/snapwat)
 
