@@ -68,7 +68,7 @@ controls: false
 
 --
 
-## 1⃣️. Don't define precache list by hand ✍
+## 1⃣️ Don't define precache list by hand ✍
 
 ```javascript
 gulp.task('generate-service-worker', function(callback) {
@@ -96,7 +96,7 @@ cache.addAll( resources );
 
 --
 
-## 2⃣️. Don't cache too much on install! ⚖
+## 2⃣️ Don't cache too much on install! ⚖
 
 ![Emoji SVGs](images/svgs.png)
 
@@ -107,7 +107,7 @@ cache.addAll( resources );
 
 --
 
-## 3⃣️. URLs, not files 🗂
+## 3⃣️ URLs, not files 🗂
 
 ```javascript
 const RESOURCES = [
@@ -121,13 +121,13 @@ cache.addAll( RESOURCES );
 
 --
 
-## 4⃣️. Remember to check Lighthouse 🔦🏠
+## 4⃣️ Remember to check Lighthouse 🔦🏠
 
 ![Lighthouse](images/lighthouse-report.png)
 
 --
 
-## 5⃣️. getUserMedia does not observe requested constraints 🙈
+## 5⃣️ getUserMedia does not observe requested constraints 🙈
 
 ```javascript
 
@@ -137,13 +137,13 @@ cache.addAll( RESOURCES );
 
 --
 
-## 6⃣️. getUserMedia prompt doesn't appear in localhost standalone 🙊
+## 6⃣️ getUserMedia prompt doesn't appear in localhost standalone 🙊
 
 <div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
 
 --
 
-## 7⃣️. Data-uri downloads may be blocked ⛔️
+## 7⃣️ Data-uri downloads may be blocked ⛔️
 
 <img src="images/image-save-error.png" alt="Data URI image save error" width="30%">
 
@@ -151,7 +151,7 @@ cache.addAll( RESOURCES );
 
 --
 
-## 8⃣️. SWs miss &lt;a download&gt; requests 🙉
+## 8⃣️ SWs miss &lt;a download&gt; requests 🙉
 
 [![Chromium bug](images/chromium-bug.png)](https://bugs.chromium.org/p/chromium/issues/detail?id=468227#c13)
 
@@ -159,7 +159,7 @@ cache.addAll( RESOURCES );
 
 --
 
-## 9⃣️. 'New tab' in standalone mode kills page 💀
+## 9⃣️ 'New tab' in standalone mode kills page 💀
 
 <!-- TODO if there's time, make a test case and quick video of this -->
 
@@ -171,7 +171,7 @@ window.open(saveCanvas.toDataURL('image/png'), '_blank');
 
 --
 
-## 🔟. Long tap disabled in standalone mode 🚫
+## 🔟 Long tap disabled in standalone mode 🚫
 
 <!-- TODO show a video? -->
 
