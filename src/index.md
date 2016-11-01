@@ -149,7 +149,7 @@ navigator.mediaDevices.getUserMedia({video: constraints})
 
 ## 6⃣️ Test standalone mode at non-localhost URL 🙊
 
-<img src="images/localhost-bug.png" alt="Localhost bug" width="30%"/>
+<img src="images/localhost-bug.png" alt="Localhost bug" width="25%"/>
 
 <div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
 
@@ -199,9 +199,9 @@ window.open(saveCanvas.toDataURL('image/png'), '_blank');
 
 ## Other tricky things 🤔
 
-* &lt;input type=”file”&gt; photo orientation (used [JavaScript-Load-Image](https://github.com/blueimp/JavaScript-Load-Image.git))
-* Calculating text bounds on canvas (I assume emojis are square)
-* Text doesn't render to canvas when over about 240px? :-/
+* &lt;input type=”file”&gt; orientation (used [JavaScript-Load-Image](https://github.com/blueimp/JavaScript-Load-Image.git))
+* Calculating canvas text bounds
+* Text doesn't render when over ~240px?
 
 --
 
