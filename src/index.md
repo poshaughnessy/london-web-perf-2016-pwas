@@ -188,7 +188,13 @@ toolbox.router.get('/profile', toolbox.fastest);
 
 --
 
-## 1⃣️ Standalone & localhost: prompt doesn't appear 🙊
+## 1⃣️ Enhance progressively! 📈
+
+<img src="images/iphone.png" alt="iPhone" width="25%"/>
+
+--
+
+## 2⃣️ Standalone & localhost: prompt doesn't appear 🙊
 
 <img src="images/localhost-bug.png" alt="Localhost bug" width="25%"/>
 
@@ -196,7 +202,7 @@ toolbox.router.get('/profile', toolbox.fastest);
 
 --
 
-## 2⃣️ Don't rely on getUserMedia constraints 🙈
+## 3⃣️ Don't rely on getUserMedia constraints 🙈
 
 ```javascript
 const constraints = {
