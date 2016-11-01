@@ -222,7 +222,7 @@ navigator.mediaDevices.getUserMedia({video: constraints})
 
 --
 
-## 1⃣️ Common &lt;a download&gt; hack ⛏ 
+## 1⃣️ Common &lt;a download&gt; hack ⛏
 
 ```javascript
 var link = document.createElement('a');
@@ -269,7 +269,7 @@ window.open(canvas.toDataURL('image/png'), '_blank');
 
 --
 
-## 6️⃣️ Save image disabled if image too big 🐘
+## 6⃣️ Save image disabled if image too big 🐘
 
 <img src="images/save-image-disabled.png" alt="Save image disabled" width="50%"/>
 
@@ -374,7 +374,7 @@ Origin-Trial: token_obtained_from_signup
 ```javascript
 self.addEventListener('fetch', function(event) {
   if (event.request.headers.get('save-data')) {
-    ...  
+    ...
 ```
 
 [bit.ly/save-data-header](http://bit.ly/save-data-header)
