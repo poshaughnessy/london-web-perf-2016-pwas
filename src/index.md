@@ -176,7 +176,7 @@ navigator.mediaDevices.getUserMedia({video: constraints})
 <!-- TODO if there's time, make a test case and quick video of this -->
 
 ```javascript
-window.open(saveCanvas.toDataURL('image/png'), '_blank');
+window.open(canvas.toDataURL('image/png'), '_blank');
 ```
 
 <div class="corner-logos">![Chrome](images/chrome.png) ![Samsung Internet](images/sbrowser5.0.png)</div>
