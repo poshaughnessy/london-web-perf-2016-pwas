@@ -68,7 +68,7 @@ controls: false
 
 --
 
-# Service Workers
+# Service Workers 🚓
 
 --
 
@@ -169,7 +169,7 @@ toolbox.router.get(‘/profile’, toolbox.fastest);
 
 --
 
-# getUserMedia
+# getUserMedia 🎥
 
 --
 
@@ -197,7 +197,7 @@ navigator.mediaDevices.getUserMedia({video: constraints})
 
 --
 
-# Saving images
+# Saving images 🖼
 
 --
 
