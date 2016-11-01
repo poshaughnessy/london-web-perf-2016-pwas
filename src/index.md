@@ -145,7 +145,7 @@ cache.addAll( RESOURCES );
 * “cache first”, then fallback to network
 
 ```javascript
-toolbox.router.get(‘/images’, toolbox.cacheFirst);
+toolbox.router.get('/images', toolbox.cacheFirst);
 ```
 
 --
@@ -153,7 +153,7 @@ toolbox.router.get(‘/images’, toolbox.cacheFirst);
 * “network first”, then fallback to cache
 
 ```javascript
-toolbox.router.get(‘/api’, toolbox.networkFirst);
+toolbox.router.get('/api', toolbox.networkFirst);
 ```
 
 --
@@ -161,7 +161,7 @@ toolbox.router.get(‘/api’, toolbox.networkFirst);
 * “fastest” — serve whichever comes back first
 
 ```javascript
-toolbox.router.get(‘/profile’, toolbox.fastest);
+toolbox.router.get('/profile', toolbox.fastest);
 ```
 <div></div>
 * “network only”

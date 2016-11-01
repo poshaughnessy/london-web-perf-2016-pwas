@@ -1025,21 +1025,21 @@ cache.addAll( RESOURCES );</code></pre>
 <ul>
 <li>“cache first”, then fallback to network</li>
 </ul>
-<pre><code class="lang-javascript">toolbox.router.get(‘/images’, toolbox.cacheFirst);</code></pre>
+<pre><code class="lang-javascript">toolbox.router.get(<span class="hljs-string">'/images'</span>, toolbox.cacheFirst);</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-20">
     <section class="slide-content"><ul>
 <li>“network first”, then fallback to cache</li>
 </ul>
-<pre><code class="lang-javascript">toolbox.router.get(‘/api’, toolbox.networkFirst);</code></pre>
+<pre><code class="lang-javascript">toolbox.router.get(<span class="hljs-string">'/api'</span>, toolbox.networkFirst);</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-21">
     <section class="slide-content"><ul>
 <li>“fastest” — serve whichever comes back first</li>
 </ul>
-<pre><code class="lang-javascript">toolbox.router.get(‘/profile’, toolbox.fastest);</code></pre>
+<pre><code class="lang-javascript">toolbox.router.get(<span class="hljs-string">'/profile'</span>, toolbox.fastest);</code></pre>
 <p><div></div></p>
 <ul>
 <li>“network only”</li>
