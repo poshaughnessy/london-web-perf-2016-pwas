@@ -9,7 +9,7 @@ controls: false
 
 # Progressive Web Apps
 
-## Service Workers & Server-free Selfies
+## Service Workers & Server-free Selfies 📷
 
 <div class="contact">
   <p>Peter O'Shaughnessy</p>
@@ -31,18 +31,18 @@ controls: false
 
 --
 
-## Not to be confused with...
+## Not to be confused with... 😕
 
 <img src="images/snapchat.svg" alt="Snapchat" width="30%"/>
 <p class="caption">Snapchat by Snap Inc.</p>
 
 --
 
-> PWAs combine the best of web & the best of native
+> &ldquo;PWAs combine the best of web & the best of native&rdquo; 💯
 
 --
 
-## Best of web
+## Best of web 🌎
 
 * Multi-platform
 * Frictionless
@@ -51,7 +51,7 @@ controls: false
 
 --
 
-## Best of native
+## Best of native  📱
 
 * Add to Home Screen
 * Offline
@@ -60,15 +60,15 @@ controls: false
 
 --
 
-> &ldquo;PWAs are all about removing friction&rdquo;
+> &ldquo;PWAs are all about removing friction&rdquo; 🏎
 
 --
 
-# 10 things I learned
+# 🔟 things I learned
 
 --
 
-## 1. Generate resources list with globs
+## 1⃣️. Don't define precache list by hand ✍
 
 ```javascript
 gulp.task('generate-service-worker', function(callback) {
@@ -96,7 +96,7 @@ cache.addAll( resources );
 
 --
 
-## 2. But don't cache too much on install!
+## 2⃣️. Don't cache too much on install! ⚖
 
 ![Emoji SVGs](images/svgs.png)
 
@@ -107,7 +107,7 @@ cache.addAll( resources );
 
 --
 
-## 3. URLs, not files
+## 3⃣️. URLs, not files 🗂
 
 ```javascript
 const RESOURCES = [
@@ -121,13 +121,13 @@ cache.addAll( RESOURCES );
 
 --
 
-## 4. Remember to check Lighthouse
+## 4⃣️. Remember to check Lighthouse 🔦🏠
 
 ![Lighthouse](images/lighthouse-report.png)
 
 --
 
-## 5. getUserMedia does not observe requested constraints
+## 5⃣️. getUserMedia does not observe requested constraints 🙈
 
 ```javascript
 
@@ -137,13 +137,13 @@ cache.addAll( RESOURCES );
 
 --
 
-## 6. getUserMedia prompt doesn't appear in localhost standalone
+## 6⃣️. getUserMedia prompt doesn't appear in localhost standalone 🙊
 
 <div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
 
 --
 
-## 7. Data-uri downloads may be blocked
+## 7⃣️. Data-uri downloads may be blocked ⛔️
 
 <img src="images/image-save-error.png" alt="Data URI image save error" width="30%">
 
@@ -151,7 +151,7 @@ cache.addAll( RESOURCES );
 
 --
 
-## 8. SWs miss &lt;a download&gt; requests
+## 8⃣️. SWs miss &lt;a download&gt; requests 🙉
 
 [![Chromium bug](images/chromium-bug.png)](https://bugs.chromium.org/p/chromium/issues/detail?id=468227#c13)
 
@@ -159,7 +159,7 @@ cache.addAll( RESOURCES );
 
 --
 
-## 9. 'New tab' in standalone mode kills page
+## 9⃣️. 'New tab' in standalone mode kills page 💀
 
 <!-- TODO if there's time, make a test case and quick video of this -->
 
@@ -171,7 +171,7 @@ window.open(saveCanvas.toDataURL('image/png'), '_blank');
 
 --
 
-## 10. Long tap disabled in standalone mode
+## 🔟. Long tap disabled in standalone mode 🚫
 
 <!-- TODO show a video? -->
 
@@ -179,13 +179,13 @@ window.open(saveCanvas.toDataURL('image/png'), '_blank');
 
 --
 
-## Do we need a 'save image' feature?
+## Do we need a 'save image' feature? 💾
 
 [bit.ly/save-image-feature](https://discourse.wicg.io/t/save-image-feature-on-mobile-platforms/1676)
 
 --
 
-## Other tricky things
+## Other tricky things 🤔
 
 * &lt;input type=”file”&gt; photo orientation (used [JavaScript-Load-Image](https://github.com/blueimp/JavaScript-Load-Image.git))
 * Calculating text bounds on canvas (I assume emojis are square)
@@ -193,11 +193,11 @@ window.open(saveCanvas.toDataURL('image/png'), '_blank');
 
 --
 
-# Rendering
+# Rendering 🖌
 
 --
 
-## Google recommend (in order)
+## Google recommend (in order) 👇
 
 1. SSR app shell & content for entry page. CSR takes over.
 1. SSR only app shell. JS fetches content once loaded.
@@ -206,7 +206,7 @@ window.open(saveCanvas.toDataURL('image/png'), '_blank');
 
 --
 
-# Caching strategies
+# Caching strategies 🏁
 
 --
 
@@ -239,37 +239,37 @@ toolbox.router.get(‘/profile’, toolbox.fastest);
 
 --
 
-## Save-Data header
+## Save-Data header 🗜
 
 <div class="corner-logos">![Chrome](images/chrome.png) ![Opera](images/opera.png)</div>
 
 --
 
-# Next for Snapwat?
+# Next for Snapwat 🔜
 
 --
 
-## Face tracking
+## Face tracking 👀
 
 --
 
-## Push notifications
+## Push notifications 🙌
 
 <div class="corner-logos">![Chrome](images/chrome.png) ![Samsung Internet](images/sbrowser5.0.png) ![Firefox](images/firefox.png) ![Opera](images/opera.png)</div>
 
 --
 
-## Web Share API
+## Web Share API 🗯
 
 <div class="corner-logos">![Chrome](images/chrome.png)</div>
 
 --
 
-# Next for PWAs?
+# Next for PWAs? 🆕
 
 --
 
-## Background sync
+## Background sync ⛰
 
 ```javascript
 navigator.serviceWorker.ready.then(function(reg) {
@@ -283,13 +283,19 @@ navigator.serviceWorker.ready.then(function(reg) {
 
 --
 
-## Multiple service workers for parallelisation?
+## Multiple service workers for parallelisation? 👯
 
 [jakearchibald.com/2016/service-worker-meeting-notes/](https://jakearchibald.com/2016/service-worker-meeting-notes/)
 
 --
 
-# Thanks!
+# 📲 [snapw.at](https://snapw.at)
+
+##📃  [github.com/SamsungInternet/snapwat](https://github.com/SamsungInternet/snapwat)
+
+--
+
+# Thanks! 🙏
 
 <div class="contact">
   <p>[@poshaughnessy](https://twitter.com/poshaughnessy)</p>
