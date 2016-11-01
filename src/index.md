@@ -19,7 +19,11 @@ controls: false
 
 --
 
-![Samsung Internet](images/samsunginternet-devrel.jpg)
+![Samsung Internet icon on homescreen](images/samsung-internet-home.png)
+
+--
+
+![Samsung Internet colleagues](images/samsunginternet-devrel.jpg)
 
 --
 
@@ -68,7 +72,7 @@ controls: false
 
 --
 
-## 1⃣️ Don't define precache list by hand ✍
+## 1⃣️ Automate precache resource list 📝 
 
 ```javascript
 gulp.task('generate-service-worker', function(callback) {
@@ -127,23 +131,31 @@ cache.addAll( RESOURCES );
 
 --
 
-## 5⃣️ getUserMedia does not observe requested constraints 🙈
+## 5⃣️ Don't rely on getUserMedia constraints 🙈
 
 ```javascript
+const constraints = {
+   width: {ideal: width, max: width},
+   height: {ideal: height, max: height}
+  };
 
+navigator.mediaDevices.getUserMedia({video: constraints})
+...
 ```
 
 <div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
 
 --
 
-## 6⃣️ getUserMedia prompt doesn't appear in localhost standalone 🙊
+## 6⃣️ Test standalone mode at non-localhost URL 🙊
+
+<img src="images/localhost-bug.png" alt="Localhost bug" width="30%"/>
 
 <div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
 
 --
 
-## 7⃣️ Data-uri downloads may be blocked ⛔️
+## 7⃣️ Data-uri downloads currently blocked ⛔️
 
 <img src="images/image-save-error.png" alt="Data URI image save error" width="30%">
 
@@ -171,9 +183,9 @@ window.open(saveCanvas.toDataURL('image/png'), '_blank');
 
 --
 
-## 🔟 Long tap disabled in standalone mode 🚫
+## 🔟 No long tap menu in standalone mode 🚫
 
-<!-- TODO show a video? -->
+<img src="images/no-long-tap.png" alt="No long tap menu" width="30%"/>
 
 <div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
 
@@ -193,11 +205,11 @@ window.open(saveCanvas.toDataURL('image/png'), '_blank');
 
 --
 
-# Rendering 🖌
+# Performance 🏃
 
 --
 
-## Google recommend (in order) 👇
+## Rendering recommendations (in order) 👇
 
 1. SSR app shell & content for entry page. CSR takes over.
 1. SSR only app shell. JS fetches content once loaded.
@@ -206,9 +218,7 @@ window.open(saveCanvas.toDataURL('image/png'), '_blank');
 
 --
 
-# Caching strategies 🏁
-
---
+## Caching strategies 🏁
 
 * “cache first”, then fallback to network
 
@@ -231,9 +241,7 @@ toolbox.router.get(‘/api’, toolbox.networkFirst);
 ```javascript
 toolbox.router.get(‘/profile’, toolbox.fastest);
 ```
-
---
-
+<div></div>
 * “network only”
 * “cache only”
 
@@ -241,15 +249,19 @@ toolbox.router.get(‘/profile’, toolbox.fastest);
 
 ## Save-Data header 🗜
 
+```javascript
+self.addEventListener('fetch', function(event) {
+  if (event.request.headers.get('save-data')) {
+    ...  
+```
+
+[bit.ly/save-data-header](http://bit.ly/save-data-header)
+
 <div class="corner-logos">![Chrome](images/chrome.png) ![Opera](images/opera.png)</div>
 
 --
 
-# Next for Snapwat 🔜
-
---
-
-## Face tracking 👀
+# Next for Snapwat? ⏩
 
 --
 
@@ -257,11 +269,26 @@ toolbox.router.get(‘/profile’, toolbox.fastest);
 
 <div class="corner-logos">![Chrome](images/chrome.png) ![Samsung Internet](images/sbrowser5.0.png) ![Firefox](images/firefox.png) ![Opera](images/opera.png)</div>
 
+[bit.ly/web-fundamentals-push-notifications](http://bit.ly/web-fundamentals-push-notifications)
+
 --
 
 ## Web Share API 🗯
 
 <div class="corner-logos">![Chrome](images/chrome.png)</div>
+
+--
+
+## Head tracking 👀
+
+<img src="images/head-tracking.png" alt="Head tracking example" width="25%"/>
+
+--
+
+* Brushes 🖌
+* Undo/Redo ↩️↪️
+* Local storage? 📥
+* ...
 
 --
 
@@ -283,15 +310,28 @@ navigator.serviceWorker.ready.then(function(reg) {
 
 --
 
+## Foreign fetch ✈️
+
+[bit.ly/foreign-fetch](http://bit.ly/foreign-fetch)
+
+--
+
 ## Multiple service workers for parallelisation? 👯
 
 [jakearchibald.com/2016/service-worker-meeting-notes/](https://jakearchibald.com/2016/service-worker-meeting-notes/)
 
 --
 
-# 📲 [snapw.at](https://snapw.at)
+# 🔜
 
-##📃  [github.com/SamsungInternet/snapwat](https://github.com/SamsungInternet/snapwat)
+* Service worker "v2"
+* Cache API "v2"
+
+--
+
+# 🔗 [snapw.at](https://snapw.at)
+
+## 📃  [github.com/SamsungInternet/snapwat](https://github.com/SamsungInternet/snapwat)
 
 --
 
@@ -300,5 +340,7 @@ navigator.serviceWorker.ready.then(function(reg) {
 <div class="contact">
   <p>[@poshaughnessy](https://twitter.com/poshaughnessy)</p>
   <p>[@samsunginternet](https://twitter.com/samsunginternet)</p>
+  <br/>
+  <p>[github.com/samsunginternet](https://github.com/samsunginternet)</p>
   <p>[medium.com/samsung-internet-dev](https://medium.com/samsung-internet-dev)</p>
 </div>
