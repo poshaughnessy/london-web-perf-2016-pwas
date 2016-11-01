@@ -157,7 +157,7 @@ navigator.mediaDevices.getUserMedia({video: constraints})
 
 ## 7⃣️ Data-uri downloads currently blocked ⛔️
 
-<img src="images/image-save-error.png" alt="Data URI image save error" width="25%">
+<img src="images/image-save-error.png" alt="Data URI image save error" width="25%"/>
 
 <div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
 
@@ -165,7 +165,7 @@ navigator.mediaDevices.getUserMedia({video: constraints})
 
 ## 8⃣️ SWs miss &lt;a download&gt; requests 🙉
 
-[![Chromium bug](images/chromium-bug.png)](https://bugs.chromium.org/p/chromium/issues/detail?id=468227#c13)
+<a href="https://bugs.chromium.org/p/chromium/issues/detail?id=468227#c13"><img src="images/chromium-bug.png" alt="Chromium bug" width="75%"/></a>
 
 <div class="corner-logos">![Chrome](images/chrome.png) ![Samsung Internet](images/sbrowser5.0.png)</div>
 
