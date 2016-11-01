@@ -72,7 +72,33 @@ controls: false
 
 --
 
-## 1⃣️ Automate precache resource list 📝
+## 1⃣️ Don't cache too much on install! ⚖
+
+```javascript
+var RESOURCES = ['/images/emojione/1f600.svg', ...];
+
+self.addEventListener('install', function(event) {
+  function onInstall () {
+    return caches.open(CACHE_NAME)
+      .then(function(cache) {
+        return cache.addAll(RESOURCES);
+      });
+  }
+);
+```
+
+--
+
+<img src="images/svgs.png" alt="Emoji SVGs" width="90%"/>
+
+--
+
+![I switched SVGs for emojis as text](images/emojis.png)
+<p class="caption">Emoji One SVGs (left), Unicode emojis (right)</p>
+
+--
+
+## 2⃣️ Automate precache resource list 📝
 
 ```javascript
 gulp.task('generate-service-worker', function(callback) {
@@ -96,18 +122,7 @@ import resources from '\0initial-resources';
 cache.addAll( resources );
 ```
 
-[gitlab.com/Rich-Harris/rollup-cache-manifest-example](gitlab.com/Rich-Harris/rollup-cache-manifest-example)
-
---
-
-## 2⃣️ Don't cache too much on install! ⚖
-
-<img src="images/svgs.png" alt="Emoji SVGs" width="80%"/>
-
---
-
-![I switched SVGs for emojis as text](images/emojis.png)
-<p class="caption">Emoji One SVGs (left), Unicode emojis (right)</p>
+[bit.ly/rollup-precache](https://gitlab.com/Rich-Harris/rollup-cache-manifest-example)
 
 --
 

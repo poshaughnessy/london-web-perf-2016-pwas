@@ -459,6 +459,10 @@ pre .xml .cdata {
   color: #987fff;
 }
 
+.hljs-title {
+  color: #673280;
+}
+
 /* Media Queries */
 /* 640 x 480 is the default (1em) */
 

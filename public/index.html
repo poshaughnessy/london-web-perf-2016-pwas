@@ -816,6 +816,10 @@ pre .xml .cdata {
   color: #987fff;
 }
 
+.hljs-title {
+  color: #673280;
+}
+
 /* Media Queries */
 /* 640 x 480 is the default (1em) */
 
@@ -965,7 +969,29 @@ pre .xml .cdata {
 </section>
   </div>
   <div class="slide hidden" id="slide-12">
-    <section class="slide-content"><h2 id="1-automate-precache-resource-list-">1⃣️ Automate precache resource list 📝</h2>
+    <section class="slide-content"><h2 id="1-don-t-cache-too-much-on-install-">1⃣️ Don&#39;t cache too much on install! ⚖</h2>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> RESOURCES = [<span class="hljs-string">'/images/emojione/1f600.svg'</span>, ...];
+
+self.addEventListener(<span class="hljs-string">'install'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onInstall</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> caches.open(CACHE_NAME)
+      .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cache</span>) </span>{
+        <span class="hljs-keyword">return</span> cache.addAll(RESOURCES);
+      });
+  }
+);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><p><img src="images/svgs.png" alt="Emoji SVGs" width="90%"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><p><img src="images/emojis.png" alt="I switched SVGs for emojis as text"></p>
+<p class="caption">Emoji One SVGs (left), Unicode emojis (right)</p></section>
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h2 id="2-automate-precache-resource-list-">2⃣️ Automate precache resource list 📝</h2>
 <pre><code class="lang-javascript">gulp.task(<span class="hljs-string">'generate-service-worker'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">callback</span>) </span>{
 
   swPrecache.write(path.join(rootDir, <span class="hljs-string">'service-worker.js'</span>), {
@@ -977,24 +1003,15 @@ pre .xml .cdata {
 <p><a href="https://github.com/GoogleChrome/sw-precache">github.com/GoogleChrome/sw-precache</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-13">
+  <div class="slide hidden" id="slide-16">
     <section class="slide-content"><pre><code class="lang-javascript"><span class="hljs-comment">// sw.js</span>
 <span class="hljs-keyword">import</span> resources <span class="hljs-keyword">from</span> <span class="hljs-string">'\0initial-resources'</span>;
 ...
 cache.addAll( resources );</code></pre>
-<p><a href="gitlab.com/Rich-Harris/rollup-cache-manifest-example">gitlab.com/Rich-Harris/rollup-cache-manifest-example</a></p>
+<p><a href="https://gitlab.com/Rich-Harris/rollup-cache-manifest-example">bit.ly/rollup-precache</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-14">
-    <section class="slide-content"><h2 id="2-don-t-cache-too-much-on-install-">2⃣️ Don&#39;t cache too much on install! ⚖</h2>
-<p><img src="images/svgs.png" alt="Emoji SVGs" width="80%"/></p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-15">
-    <section class="slide-content"><p><img src="images/emojis.png" alt="I switched SVGs for emojis as text"></p>
-<p class="caption">Emoji One SVGs (left), Unicode emojis (right)</p></section>
-  </div>
-  <div class="slide hidden" id="slide-16">
+  <div class="slide hidden" id="slide-17">
     <section class="slide-content"><h2 id="3-urls-not-files-">3⃣️ URLs, not files 🗂</h2>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> RESOURCES = [
   <span class="hljs-string">'/'</span>,
@@ -1005,12 +1022,12 @@ cache.addAll( resources );</code></pre>
 cache.addAll( RESOURCES );</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-17">
+  <div class="slide hidden" id="slide-18">
     <section class="slide-content"><h2 id="4-remember-to-check-lighthouse-">4⃣️ Remember to check Lighthouse 🔦🏠</h2>
 <p><img src="images/lighthouse-report.png" alt="Lighthouse" width="80%"/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-18">
+  <div class="slide hidden" id="slide-19">
     <section class="slide-content"><h2 id="5-rendering-preferences-in-order-">5⃣ Rendering preferences (in order) 👇</h2>
 <ol>
 <li>SSR app shell &amp; initial page. CSR takes over.</li>
@@ -1020,7 +1037,7 @@ cache.addAll( RESOURCES );</code></pre>
 </ol>
 </section>
   </div>
-  <div class="slide hidden" id="slide-19">
+  <div class="slide hidden" id="slide-20">
     <section class="slide-content"><h2 id="6-easy-caching-strategies-with-sw-toolbox-">6⃣ Easy caching strategies with sw-toolbox 🔧</h2>
 <ul>
 <li>“cache first”, then fallback to network</li>
@@ -1028,14 +1045,14 @@ cache.addAll( RESOURCES );</code></pre>
 <pre><code class="lang-javascript">toolbox.router.get(<span class="hljs-string">'/images'</span>, toolbox.cacheFirst);</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-20">
+  <div class="slide hidden" id="slide-21">
     <section class="slide-content"><ul>
 <li>“network first”, then fallback to cache</li>
 </ul>
 <pre><code class="lang-javascript">toolbox.router.get(<span class="hljs-string">'/api'</span>, toolbox.networkFirst);</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-21">
+  <div class="slide hidden" id="slide-22">
     <section class="slide-content"><ul>
 <li>“fastest” — serve whichever comes back first</li>
 </ul>
@@ -1047,16 +1064,16 @@ cache.addAll( RESOURCES );</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-22">
+  <div class="slide hidden" id="slide-23">
     <section class="slide-content"><h1 id="getusermedia-">getUserMedia 🎥</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-23">
+  <div class="slide hidden" id="slide-24">
     <section class="slide-content"><h2 id="1-standalone-localhost-prompt-doesn-t-appear-">1⃣️ Standalone &amp; localhost: prompt doesn&#39;t appear 🙊</h2>
 <p><img src="images/localhost-bug.png" alt="Localhost bug" width="25%"/></p>
 <div class="corner-logos"><img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
   </div>
-  <div class="slide hidden" id="slide-24">
+  <div class="slide hidden" id="slide-25">
     <section class="slide-content"><h2 id="2-don-t-rely-on-getusermedia-constraints-">2⃣️ Don&#39;t rely on getUserMedia constraints 🙈</h2>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> constraints = {
    width: {ideal: width, max: width},
@@ -1067,43 +1084,43 @@ navigator.mediaDevices.getUserMedia({video: constraints})
 ...</code></pre>
 <div class="corner-logos"><img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
   </div>
-  <div class="slide hidden" id="slide-25">
+  <div class="slide hidden" id="slide-26">
     <section class="slide-content"><h1 id="saving-images-">Saving images 🖼</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-26">
+  <div class="slide hidden" id="slide-27">
     <section class="slide-content"><h2 id="1-data-uri-downloads-currently-blocked-">1⃣️ Data-uri downloads currently blocked ⛔️</h2>
 <p><img src="images/image-save-error.png" alt="Data URI image save error" width="25%"/></p>
 <div class="corner-logos"><img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
   </div>
-  <div class="slide hidden" id="slide-27">
+  <div class="slide hidden" id="slide-28">
     <section class="slide-content"><h2 id="2-lt-a-download-gt-requests-bypass-sw-">2⃣️ &lt;a download&gt; requests bypass SW 🙉</h2>
 <p><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=468227#c13"><img src="images/chromium-bug.png" alt="Chromium bug" width="75%"/></a></p>
 <div class="corner-logos"><img src="images/chrome.png" alt="Chrome"> <img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
   </div>
-  <div class="slide hidden" id="slide-28">
+  <div class="slide hidden" id="slide-29">
     <section class="slide-content"><h2 id="3-new-tab-in-standalone-mode-kills-page-">3⃣️ &#39;New tab&#39; in standalone mode kills page 💀</h2>
 <!-- TODO if there's time, make a test case and quick video of this -->
 
 <pre><code class="lang-javascript"><span class="hljs-built_in">window</span>.open(canvas.toDataURL(<span class="hljs-string">'image/png'</span>), <span class="hljs-string">'_blank'</span>);</code></pre>
 <div class="corner-logos"><img src="images/chrome.png" alt="Chrome"> <img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
   </div>
-  <div class="slide hidden" id="slide-29">
+  <div class="slide hidden" id="slide-30">
     <section class="slide-content"><h2 id="4-no-long-tap-menu-in-standalone-mode-">4⃣ No long tap menu in standalone mode 🚫</h2>
 <p><img src="images/no-long-tap.png" alt="No long tap menu" width="25%"/></p>
 <div class="corner-logos"><img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
   </div>
-  <div class="slide hidden" id="slide-30">
+  <div class="slide hidden" id="slide-31">
     <section class="slide-content"><h2 id="5-save-image-disabled-if-image-too-big-">5⃣ Save image disabled if image too big 🐘</h2>
 <p><img src="images/save-image-disabled.png" alt="Save image disabled" width="50%"/></p>
 <div class="corner-logos"><img src="images/chrome.png" alt="Chrome"> <img src="images/sbrowser5.0.png" alt="Samsung Internet"></div></section>
   </div>
-  <div class="slide hidden" id="slide-31">
+  <div class="slide hidden" id="slide-32">
     <section class="slide-content"><h2 id="do-we-need-a-save-image-feature-">Do we need a &#39;save image&#39; feature? 💾</h2>
 <p><a href="https://discourse.wicg.io/t/save-image-feature-on-mobile-platforms/1676">bit.ly/save-image-feature</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-32">
+  <div class="slide hidden" id="slide-33">
     <section class="slide-content"><h2 id="other-tricky-things-">Other tricky things 🤔</h2>
 <ul>
 <li>&lt;input type=”file”&gt; orientation (I used <a href="https://github.com/blueimp/JavaScript-Load-Image.git">JavaScript-Load-Image</a>)</li>
@@ -1112,15 +1129,15 @@ navigator.mediaDevices.getUserMedia({video: constraints})
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-33">
+  <div class="slide hidden" id="slide-34">
     <section class="slide-content"><h1 id="next-for-pwas-">Next for PWAs? 🆕</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-34">
+  <div class="slide hidden" id="slide-35">
     <section class="slide-content"><h2 id="service-worker-v2-cache-api-v2-">Service worker &quot;v2&quot; &amp; cache API &quot;v2&quot;? 🔜</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-35">
+  <div class="slide hidden" id="slide-36">
     <section class="slide-content"><h2 id="background-sync-">Background sync ⛰</h2>
 <pre><code class="lang-javascript">navigator.serviceWorker.ready.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">reg</span>) </span>{
     <span class="hljs-keyword">return</span> reg.sync.register(<span class="hljs-string">'syncTest'</span>);
@@ -1129,20 +1146,20 @@ navigator.mediaDevices.getUserMedia({video: constraints})
   });</code></pre>
 <div class="corner-logos"><img src="images/chrome.png" alt="Chrome"></div></section>
   </div>
-  <div class="slide hidden" id="slide-36">
+  <div class="slide hidden" id="slide-37">
     <section class="slide-content"><h2 id="foreign-fetch-">Foreign fetch ✈️</h2>
 <pre><code>Link: &lt;/service-worker.js&gt;; rel=&quot;serviceworker&quot;
 Origin-Trial: token_obtained_from_signup</code></pre>
 <p><a href="http://bit.ly/foreign-fetch">bit.ly/foreign-fetch</a></p>
 <div class="corner-logos"><img src="images/chrome.png" alt="Chrome"></div></section>
   </div>
-  <div class="slide hidden" id="slide-37">
+  <div class="slide hidden" id="slide-38">
     <section class="slide-content"><h2 id="multiple-service-workers-for-parallelisation-">Multiple service workers for parallelisation? 👯</h2>
 <p><img src="images/multiple-service-workers.png" alt="Github issue" width="70%"/></p>
 <p><a href="https://jakearchibald.com/2016/service-worker-meeting-notes/">jakearchibald.com/2016/service-worker-meeting-notes/</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-38">
+  <div class="slide hidden" id="slide-39">
     <section class="slide-content"><h2 id="save-data-header-">Save-Data header 🗜</h2>
 <pre><code class="lang-javascript">self.addEventListener(<span class="hljs-string">'fetch'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
   <span class="hljs-keyword">if</span> (event.request.headers.get(<span class="hljs-string">'save-data'</span>)) {
@@ -1150,28 +1167,28 @@ Origin-Trial: token_obtained_from_signup</code></pre>
 <p><a href="http://bit.ly/save-data-header">bit.ly/save-data-header</a></p>
 <div class="corner-logos"><img src="images/chrome.png" alt="Chrome"> <img src="images/opera.png" alt="Opera"></div></section>
   </div>
-  <div class="slide hidden" id="slide-39">
+  <div class="slide hidden" id="slide-40">
     <section class="slide-content"><h1 id="next-for-snapwat-">Next for Snapwat? ⏩</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-40">
+  <div class="slide hidden" id="slide-41">
     <section class="slide-content"><h2 id="push-notifications-">Push notifications 🙌</h2>
 <p><img src="images/podle-push-notification.png" alt="Podle push notification" width="25%"/></p>
 <!-- [bit.ly/web-fundamentals-push-notifications](http://bit.ly/web-fundamentals-push-notifications) -->
 
 <div class="corner-logos"><img src="images/chrome.png" alt="Chrome"> <img src="images/sbrowser5.0.png" alt="Samsung Internet"> <img src="images/firefox.png" alt="Firefox"> <img src="images/opera.png" alt="Opera"></div></section>
   </div>
-  <div class="slide hidden" id="slide-41">
+  <div class="slide hidden" id="slide-42">
     <section class="slide-content"><h2 id="web-share-api-">Web Share API 🗯</h2>
 <p><img src="images/web-share-api.png" alt="Share options" width="25%"/></p>
 <div class="corner-logos"><img src="images/chrome.png" alt="Chrome"></div></section>
   </div>
-  <div class="slide hidden" id="slide-42">
+  <div class="slide hidden" id="slide-43">
     <section class="slide-content"><h2 id="head-tracking-">Head tracking 👀</h2>
 <p><img src="images/head-tracking.png" alt="Head tracking example" width="25%"/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-43">
+  <div class="slide hidden" id="slide-44">
     <section class="slide-content"><ul>
 <li>Brushes 🖌</li>
 <li>Undo/Redo ↩️↪️</li>
@@ -1180,12 +1197,12 @@ Origin-Trial: token_obtained_from_signup</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-44">
+  <div class="slide hidden" id="slide-45">
     <section class="slide-content"><h1 id="-snapw-at-https-snapw-at-">🔗 <a href="https://snapw.at">snapw.at</a></h1>
 <h2 id="-github-com-samsunginternet-snapwat-https-github-com-samsunginternet-snapwat-">📃  <a href="https://github.com/SamsungInternet/snapwat">github.com/SamsungInternet/snapwat</a></h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-45">
+  <div class="slide hidden" id="slide-46">
     <section class="slide-content"><h1 id="thanks-">Thanks! 🙏</h1>
 <div class="contact">
   <p><a href="https://twitter.com/poshaughnessy">@poshaughnessy</a></p>
