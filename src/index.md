@@ -222,7 +222,18 @@ navigator.mediaDevices.getUserMedia({video: constraints})
 
 --
 
-## 1⃣️ Data-uri downloads currently blocked ⛔️
+## 1⃣️ Common &lt;a download&gt; hack ⛏ 
+
+```javascript
+var link = document.createElement('a');
+link.download = 'My Snapwat';
+link.href = dataURI;
+link.click();
+```
+
+--
+
+## 2⃣️ Data-uri downloads currently blocked ⛔️
 
 <img src="images/image-save-error.png" alt="Data URI image save error" width="25%"/>
 
@@ -230,7 +241,7 @@ navigator.mediaDevices.getUserMedia({video: constraints})
 
 --
 
-## 2⃣️ &lt;a download&gt; requests bypass SW 🙉
+## 3⃣️ &lt;a download&gt; requests bypass SW 🙉
 
 <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=468227#c13"><img src="images/chromium-bug.png" alt="Chromium bug" width="75%"/></a>
 
@@ -238,7 +249,7 @@ navigator.mediaDevices.getUserMedia({video: constraints})
 
 --
 
-## 3⃣️ 'New tab' in standalone mode kills page 💀
+## 4⃣ 'New tab' in standalone mode kills page 💀
 
 <!-- TODO if there's time, make a test case and quick video of this -->
 
@@ -250,7 +261,7 @@ window.open(canvas.toDataURL('image/png'), '_blank');
 
 --
 
-## 4⃣ No long tap menu in standalone mode 🚫
+## 5⃣ No long tap menu in standalone mode 🚫
 
 <img src="images/no-long-tap.png" alt="No long tap menu" width="25%"/>
 
@@ -258,7 +269,7 @@ window.open(canvas.toDataURL('image/png'), '_blank');
 
 --
 
-## 5⃣ Save image disabled if image too big 🐘
+## 6️⃣️ Save image disabled if image too big 🐘
 
 <img src="images/save-image-disabled.png" alt="Save image disabled" width="50%"/>
 
