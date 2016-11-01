@@ -185,7 +185,7 @@ window.open(canvas.toDataURL('image/png'), '_blank');
 
 ## 🔟 No long tap menu in standalone mode 🚫
 
-<img src="images/no-long-tap.png" alt="No long tap menu" width="30%"/>
+<img src="images/no-long-tap.png" alt="No long tap menu" width="25%"/>
 
 <div class="corner-logos">![Samsung Internet](images/sbrowser5.0.png)</div>
 
