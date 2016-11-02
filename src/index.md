@@ -91,7 +91,7 @@ self.addEventListener('install', function(event) {
 
 --
 
-![I switched SVGs for emojis as text](images/emojis.png)
+![I switched SVGs for emojis as text](images/emojis.jpg)
 <p class="caption">Emoji One SVGs (left), Unicode emojis (right)</p>
 
 --
@@ -269,7 +269,7 @@ window.open(canvas.toDataURL('image/png'), '_blank');
 
 ## 6⃣️ Save image disabled if image too big 🐘
 
-<img src="images/save-image-disabled.png" alt="Save image disabled" width="50%"/>
+<img src="images/save-image-disabled.jpg" alt="Save image disabled" width="50%"/>
 
 <div class="corner-logos">![Chrome](images/chrome.png) ![Samsung Internet](images/sbrowser5.0.png)</div>
 
