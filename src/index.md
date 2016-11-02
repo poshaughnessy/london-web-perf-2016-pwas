@@ -1,9 +1,7 @@
 title: PWAs – Service Workers and Server-free Selfies
 output: public/index.html
-style: styles.css
-script: script.js
+theme: peter-theme
 controls: false
-
 
 --
 

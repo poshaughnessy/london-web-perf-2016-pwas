@@ -15,22 +15,6 @@
 @font-face {
   font-family: 'Lora';
   font-style: normal;
-  font-weight: 500;
-  src: url('fonts/Lora/Lora-Medium.ttf') format('truetype'),
-  url('fonts/Lora/Lora-Medium.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  src: url('fonts/Lora/Lora-Semibold.ttf') format('truetype'),
-  url('fonts/Lora/Lora-Semibold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
   font-weight: 700;
   src: url('fonts/Lora/Lora-Bold.ttf') format('truetype'),
   url('fonts/Lora/Lora-Bold.ttf') format('truetype');
@@ -38,11 +22,20 @@
 
 @font-face {
   font-family: 'Lora';
-  font-style: normal;
-  font-weight: 900;
-  src: url('fonts/Lora/Lora-Black.ttf') format('truetype'),
-  url('fonts/Lora/Lora-Black.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+  src: url('fonts/Lora/Lora-Italic.ttf') format('truetype'),
+  url('fonts/Lora/Lora-Italic.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 700;
+  src: url('fonts/Lora/Lora-BoldItalic.ttf') format('truetype'),
+  url('fonts/Lora/Lora-BoldItalic.ttf') format('truetype');
+}
+
 
 /* Theme Styles */
 body {
